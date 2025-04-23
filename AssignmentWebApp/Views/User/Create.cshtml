@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model AssignmentWebApp.Models.User
+<h2>Create New User</h2>
+<form asp-action="Create" method="post">
+    <div>
+        <label>User Id</label>
+        <input asp-for="UserId" class="form-control" />
+    </div>
+    <div>
+        <label>Name</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div>
+        <label>Email</label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Create</button>
+</form>
+

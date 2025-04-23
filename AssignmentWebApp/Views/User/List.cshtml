@@ -1,0 +1,32 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<AssignmentWebApp.Models.User>
+
+<h2>All Users</h2>
+
+@if (!Model.Any())
+{
+    <p>No users found.</p>
+}
+else
+{
+    <table style="width:100%; border-collapse: collapse;" border="1">
+        <tr style="background-color: lightgray;">
+            <th>User ID</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            var user = Model[i];
+            var rowColor = i % 2 == 0 ? "lightblue" : "white";
+            <tr style="background-color: @rowColor">
+                <td>@user.UserId</td>
+                <td>@user.Name</td>
+                <td>@user.Email</td>
+            </tr>
+        }
+    </table>
+}
+
