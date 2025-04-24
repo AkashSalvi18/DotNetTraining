@@ -1,0 +1,14 @@
+﻿@model IEnumerable<AssignmentWebApp.Models.CommentViewModel>
+
+<div class="mt-3">
+    <h5>Comments (@Model.Count())</h5>
+    <ul class="list-group">
+        @foreach (var comment in Model)
+        {
+            <li class="list-group-item">
+                <strong>@comment.Name</strong> (<i>@comment.Email</i>)
+                <p>@comment.Body</p>
+            </li>
+        }
+    </ul>
+</div>
