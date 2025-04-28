@@ -11,6 +11,8 @@ namespace AssignmentWebApp.TagHelpers
 
         [HtmlAttributeName("asp-action")]
         public string Action { get; set; }
+        [HtmlAttributeName("asp-area")]
+        public string Area { get; set; }
 
         [ViewContext]
         [HtmlAttributeNotBound]
@@ -20,9 +22,11 @@ namespace AssignmentWebApp.TagHelpers
         {
             var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
             var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
+            var currentArea = ViewContext.RouteData.Values["area"]?.ToString() ?? "";
 
             if (string.Equals(currentController, Controller, StringComparison.OrdinalIgnoreCase) &&
-                string.Equals(currentAction, Action, StringComparison.OrdinalIgnoreCase))
+                string.Equals(currentAction, Action, StringComparison.OrdinalIgnoreCase)&&
+                string.Equals(currentArea, Area, StringComparison.OrdinalIgnoreCase))
             {
                 var existingClasses = output.Attributes["class"]?.Value?.ToString() ?? "";
                 output.Attributes.SetAttribute("class", $"{existingClasses} active".Trim());

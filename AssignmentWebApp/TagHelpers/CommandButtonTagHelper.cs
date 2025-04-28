@@ -3,7 +3,7 @@
 namespace AssignmentWebApp.TagHelpers
 {
     [HtmlTargetElement("command-button")]
-    public class CommandButtonTagHelper:TagHelper
+    public class CommandButtonTagHelper : TagHelper
     {
         public string Type { get; set; } = "submit";
         public string Class { get; set; } = "btn btn-primary";

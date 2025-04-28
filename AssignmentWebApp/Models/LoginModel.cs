@@ -1,8 +1,14 @@
-﻿namespace AssignmentWebApp.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace AssignmentWebApp.Models
 {
     public class LoginModel
     {
+        [Required(ErrorMessage = "Username is required")]
         public string Username { get; set; }
+
+        [Required(ErrorMessage = "Password is required")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
     }
 }
