@@ -15,6 +15,7 @@ namespace AssignmentWebApp.Controllers
 
         public IActionResult Index()
         {
+            ViewData["Username"] = HttpContext.Session.GetString("Username");
             return View();
         }
 

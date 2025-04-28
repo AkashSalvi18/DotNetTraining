@@ -25,3 +25,9 @@ body {
     font-weight: bold;
     color: #007bff;
 }
+
+.welcome-message {
+    color: green;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
