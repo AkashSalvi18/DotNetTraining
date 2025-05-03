@@ -1,0 +1,41 @@
+﻿@model List<CustomerOrderWebApp.Models.Customer>
+
+<div class="container mt-4">
+    <form asp-action="Search" method="get" class="mb-3">
+        <div class="input-group">
+            <input type="text" name="searchTerm" class="form-control" placeholder="Enter customer name..." />
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </form>
+
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Phone Number</th>
+                <th>Mode of Payment</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (var customer in Model)
+                {
+                    <tr>
+                        <td>@customer.Name</td>
+                        <td>@customer.Address</td>
+                        <td>@customer.PhoneNumber</td>
+                        <td>@customer.ModeOfPayment</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="4" class="text-center">No results found.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

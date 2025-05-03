@@ -1,0 +1,28 @@
+﻿@model IEnumerable<CustomerOrderWebApp.Models.Item>
+
+@{
+    ViewData["Title"] = "Items List";
+}
+
+<h2>Items</h2>
+<a class="btn btn-success mb-2" asp-controller="Item" asp-action="Add">Add New Item</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Item Name</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ItemName</td>
+                <td>@item.ItemDesc</td>
+                <td>@item.Price</td>
+            </tr>
+        }
+    </tbody>
+</table>
